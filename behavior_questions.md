@@ -1,8 +1,3 @@
----
-title: "Behavioral interview questions"
-date: "2021-07-05"
----
-
 # **Common Questions**
 
 When answering behavioral interview questions, focus on providing examples of situations that are specific, personal and professional. You should be able to tell a concise story in two to three minutes. By asking behavioral interview questions, interviewers want to learn more about your thought process, and the strategies and skills you use to solve problems.
@@ -67,7 +62,7 @@ As a part of the project, I needed to quickly acquire a deep understanding of th
 
 **Action:**
 1. **Learning on the Fly:** I recognized that to meet the project requirements, I had to quickly learn about EDP XL and EDP GT's CI mechanisms. I dedicated time to self-guided learning, delving into documentation and seeking advice from colleagues who were well-versed in these pipelines.
-2. **Hands-on Experience:*## Adaptability* I actively engaged in practical hands-on experience. I started by working on test instances and collaborated with colleagues who provided guidance and mentorship. This hands-on approach accelerated my learning process.
+2. **Hands-on Experience:** I actively engaged in practical hands-on experience. I started by working on test instances and collaborated with colleagues who provided guidance and mentorship. This hands-on approach accelerated my learning process.
 3. **Problem-Solving Creativity:** To ensure seamless integration, I had to think creatively and adapt code coverage enforcement to fit within the existing CI frameworks. This required an innovative approach to problem-solving.
 
 **Result:**
@@ -79,7 +74,7 @@ As a result of my adaptability:
 This experience showcased my capacity to adapt, learn quickly, and creatively overcome challenges in a dynamic DevOps environment. It also demonstrated my commitment to ensuring the successful execution of projects.
 
 
-### **Overcoming challenges**
+## **Overcoming challenges**
 
 Employers ask questions about overcoming a challenging situation to gauge your level of perseverance. They want to gain a better understanding of how you handle stress and if you’re able to break down larger problems into smaller tasks. To answer this question, try to tell a concise personal story about a specific situation. Try to avoid being too general. End your answer by identifying what you learned from the experience.
 
@@ -89,11 +84,9 @@ Employers ask questions about overcoming a challenging situation to gauge your l
 4. Tell me about a goal you failed to achieve.
 5. Tell me about a time you felt you went above and beyond.
 
-<table><tbody><tr><td>Question</td><td>Tell me about a time when you handled a challenging situation</td></tr><tr><td>Situation</td><td>When I was working at TD as a IT administrator, I and another co-op students were working on the same sharepoint project.</td></tr><tr><td>Task</td><td>After we received the task from our manager, we didn’t know what to do first and what to do second. He told me that he decided to wait for manager’s replay. After few days, I decided to take in charge as my manager indicated that he doesn’t have enough time every day for our project.</td></tr><tr><td>Action</td><td>I asked advise from other colleagues on the project timeline and steps I should take and how to break down. Then I separated the tasks into two and told him on what to do.</td></tr><tr><td>Result</td><td>I was not only able to finish my work on time, I also supported him for any questions and problems. We worked together on the problems that he doesn’t know how to solve.</td></tr></tbody></table>
 
-<table><tbody><tr><td>Question</td><td>Tell me about a time when you were in conflict with a peer and how the situation was resolved</td></tr><tr><td>Situation</td><td>When I was working at Kenzo Ramen as a server I was making a dish called abkari chashu.</td></tr><tr><td>Task</td><td>I was responsible for putting everything together as a dish. During training, I was told that we have to put chili power. He thought that I was doing incorrect, and he was yelling at me.</td></tr><tr><td>Action</td><td>I was able to listen to what he said, and calmly explain to him that this is what I was been told. I reflected the situation to the manager and confirmed the correct action. In the following meetings we were able to confirm the same action across the whole company.</td></tr><tr><td>Result</td><td>&nbsp;</td></tr></tbody></table>
 
-### **Motivation and values**
+## **Motivation and values**
 
 Asking questions about your values and motivations allows employers to gain insight into what you’re passionate about, how you stay focused and what makes you excited. Your answers will help employers determine if you’re a good match with the company’s mission and style of work.
 
@@ -102,6 +95,44 @@ Asking questions about your values and motivations allows employers to gain insi
 3. Can you give me an example of a time when you felt dissatisfied with your work?
 4. Tell me about a body of work you felt was most impact for you or your company.
 5. How do you stay motivated when a job requires you to perform repetitive tasks?
+
+## Motivation and Values
+
+Understanding an individual's values and motivations provides valuable insights into their passion, focus, and enthusiasm. These answers help employers assess the alignment of your values and motivations with the company's mission and work style. Here are some questions on this topic along with my responses:
+
+1. **Setting Goals:**
+   - *Situation:* At the beginning of my role as a Senior DevOps Engineer, I recognized the need to enhance the efficiency of our Enterprise DevOps Pipeline (EDP).
+   - *Task:* The goal was to streamline the CI/CD process and reduce deployment times while maintaining high-quality code.
+   - *Action:* I collaborated with my team to set clear and measurable goals. We implemented automation processes, introduced best practices, and continuously monitored performance metrics.
+   - *Result:* Over time, our efforts led to a significant reduction in deployment times, an improvement in code quality, and a more efficient EDP. This demonstrated my ability to set and achieve strategic goals while enhancing team productivity.
+
+2. **Proudest Professional Moment:**
+   - *Situation:* One of the proudest moments in my professional career was successfully leading the development of a KPI Dashboard for DevOps analytics and reporting.
+   - *Task:* We aimed to create a centralized platform for monitoring and analyzing DevOps metrics.
+   - *Action:* I spearheaded the project, collaborated with a multidisciplinary team, and ensured that the KPI Dashboard met the requirements for data-driven decision-making.
+   - *Result:* The KPI Dashboard not only improved our DevOps efficiency but also contributed to the overall success of our organization. This achievement was deeply meaningful to me as it aligned with my passion for data-driven decision-making.
+
+3. **Dealing with Dissatisfaction:**
+   - *Situation:* There was a time during my role as a DevOps Engineer when I felt dissatisfied with the manual and time-consuming nature of certain tasks.
+   - *Task:* My goal was to find a way to automate and streamline these tasks to improve efficiency.
+   - *Action:* I took the initiative to research automation tools and solutions, collaborated with my team to implement them, and learned from colleagues with expertise in this area.
+   - *Result:* By introducing automation, we reduced the time spent on repetitive tasks, which not only addressed my dissatisfaction but also enhanced overall productivity and job satisfaction.
+
+4. **Impactful Work:**
+   - *Situation:* Throughout my career, a body of work that had a significant impact was the integration of SonarQube for code coverage analysis in the Enterprise DevOps Pipeline (EDP).
+   - *Task:* The goal was to enforce comprehensive code quality and coverage standards.
+   - *Action:* I led the integration, ensured the adoption of best practices, and facilitated collaboration between teams.
+   - *Result:* This project not only enhanced code quality and coverage but also contributed to higher-quality software, reflecting my commitment to impactful contributions.
+
+5. **Staying Motivated with Repetitive Tasks:**
+   - *Situation:* In some roles, repetitive tasks are inevitable. It's crucial to stay motivated even when handling such tasks.
+   - *Task:* My goal was to maintain motivation and focus on delivering quality results despite the repetitiveness.
+   - *Action:* I adopted strategies such as setting small milestones, finding satisfaction in incremental improvements, and seeking opportunities to optimize the process. For example, in projects like the Diamond Reconciliation Project, I was assigned to automate repetitive tasks. I tackled this challenge by thinking of automating the tasks and writing possible repeatable scripts. This not only reduced the time spent on these tasks but also introduced a sense of accomplishment and even made the process enjoyable. Similarly, during the Code Coverage Audit, where I had to capture screenshots for over 50 samples, I wrote a Python program to automate the task, saving a significant amount of time and adding an element of creativity and efficiency to the process.
+   - *Result:* By staying motivated during repetitive tasks and seeking opportunities for automation and improvement, I continued to deliver high-quality work, maintain focus, and contribute to the team's success.
+
+
+These responses reflect my values, motivation, and commitment to setting and achieving goals, making a meaningful impact, and maintaining enthusiasm even in challenging scenarios.
+
 
 ### **Communication**
 
