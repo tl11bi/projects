@@ -163,3 +163,41 @@ RUN go build -o myapp
 # Run the Go application
 CMD ["./myapp"]
 ```
+
+## Expose example
+```dockerfile
+# Use a base image
+FROM nginx:alpine
+
+# Expose port 80 for HTTP
+EXPOSE 80
+
+# Expose port 443 for HTTPS (optional)
+EXPOSE 443
+
+# Additional Dockerfile instructions here...
+
+```
+Then do ```docker run -d -p 8080:80 my-nginx-container```
+
+## Volumn Example
+
+```dockerfile
+# Use a base image
+FROM ubuntu:20.04
+
+# Create a volume mount point
+VOLUME /app/data
+
+# Additional Dockerfile instructions here...
+
+```
+
+Then do ```docker run -v /host/path:/app/data my-image```
+
+### Why use volumes in Docker:
+- Data Persistence: Volumes allow you to persist data beyond the lifecycle of a container. When a container is removed, the data in the volume remains accessible.
+- Data Sharing: Volumes enable data sharing between containers, making it easy to share configuration files or data between related containers.
+- Backup and Restore: Volumes make it easier to back up and restore data because you can simply back up the volume directory on the host.
+- Decoupling Data from Containers: Volumes allow you to separate data from the container, making it easier to manage and update containers independently of the data they use.
+- Performance: Volumes are often used for database storage, and they can offer better performance compared to storing data directly inside containers.
