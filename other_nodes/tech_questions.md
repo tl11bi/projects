@@ -1,70 +1,165 @@
 # Dockerfile Cheatsheet
 
-A Dockerfile is used to define the configuration and steps required to create a Docker image. Below are some common Dockerfile instructions and their descriptions:
+## Instructions
 
-### Instructions for Building the Image:
+- **ADD**: Copies files from the host to the container's filesystem at a specified destination.
+- **CMD**: Specifies the default command to run when the container starts. It can be overridden when running the container.
+- **ENTRYPOINT**: Sets the default application to run when the container starts. It's less flexible than CMD.
+- **ENV**: Sets environment variables in the container.
+- **EXPOSE**: Associates a specific port to enable networking between the container and the outside world.
+- **FROM**: Defines the base image used to start the build process.
+- **MAINTAINER**: Deprecated; use LABEL to specify image creator information.
+- **RUN**: Executes a command during the build process.
+- **USER**: Sets the user or UID under which the container runs.
+- **VOLUME**: Enables access from the container to a directory on the host machine.
+- **WORKDIR**: Sets the working directory for subsequent CMD or RUN instructions.
+- **LABEL**: Adds labels and metadata to your Docker image.
 
-- **FROM**:
-  Defines the base image used to start the build process.
-  
-- **MAINTAINER** (Deprecated):
-  Specifies the full name and email address of the image creator (Consider using LABEL for metadata).
+## Usage
 
-- **RUN**:
-  Executes a command during the build process. Commonly used for installing software or performing setup tasks.
-
-- **CMD**:
-  Specifies the default command to run when the container starts. Can be overridden when running the container.
-
-- **ENTRYPOINT**:
-  Similar to CMD but sets an executable as the default command. It's less easily overridden.
-
-- **LABEL**:
-  Allows you to add metadata and labels to your Docker image.
-
-- **EXPOSE**:
-  Associates a specific port with the container for networking purposes (does not actually publish the port).
-
-- **ENV**:
-  Sets environment variables within the container.
-
-- **ADD**:
-  Copies files from the host into the container's filesystem at a specified destination.
-
-- **COPY**:
-  Similar to ADD but is recommended for copying local files into the container.
-
-- **WORKDIR**:
-  Sets the working directory for subsequent CMD and RUN instructions.
-
-- **VOLUME**:
-  Creates a mount point within the container for accessing a directory on the host machine.
-
-- **USER**:
-  Sets the user or UID under which the container runs (enhances security).
-
-### Example Usage:
+Example usage of some Dockerfile instructions:
 
 ```Dockerfile
-# Use an official Python runtime as a parent image
-FROM python:3.8-slim
+# Use a base image
+FROM ubuntu:20.04
 
 # Set environment variables
-ENV APP_DIR /app
-ENV FLASK_APP app.py
+ENV APP_VERSION 1.0
+ENV PORT 8080
 
-# Create a directory for the app
-WORKDIR $APP_DIR
+# Copy files to the container
+ADD app.tar.gz /app/
 
-# Copy the current directory contents into the container at /app
-COPY . $APP_DIR
-
-# Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
-
-# Make port 80 available to the world outside this container
+# Expose a port
 EXPOSE 80
 
-# Define the command to run your application
+# Specify the default command
+CMD ["app", "--port", "80"]
+
+# Run a command during build
+RUN apt-get update && apt-get install -y package
+
+# Set the working directory
+WORKDIR /app
+
+# Define the entrypoint
+ENTRYPOINT ["app"]
+
+# Set the user to run the container
+USER myuser
+
+# Create a volume for data persistence
+VOLUME /data
+
+# Add metadata to the image
+LABEL maintainer="yourname@example.com" version="1.0"
+```
+
+# Dockerfile Examples with Labels
+
+## Python with Labels
+
+```Dockerfile
+# Use a Python base image
+FROM python:3.9
+
+# Set labels for the image
+LABEL maintainer="yourname@example.com"
+LABEL version="1.0"
+LABEL description="Python application with labels"
+
+# Set the working directory
+WORKDIR /app
+
+# Copy and install Python dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Run a Python script
+COPY app.py .
 CMD ["python", "app.py"]
+```
+## Node.js with Labels
+```Dockerfile
+# Use a Node.js base image
+FROM node:14
+
+# Set labels for the image
+LABEL maintainer="yourname@example.com"
+LABEL version="1.0"
+LABEL description="Node.js application with labels"
+
+# Set the working directory
+WORKDIR /app
+
+# Copy and install Node.js dependencies
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+
+# Run a Node.js application
+COPY app.js .
+CMD ["node", "app.js"]
+```
+## Java with Labels
+```Dockerfile
+# Use an OpenJDK base image
+FROM openjdk:11-jre-slim
+
+# Set labels for the image
+LABEL maintainer="yourname@example.com"
+LABEL version="1.0"
+LABEL description="Java application with labels"
+
+# Set the working directory
+WORKDIR /app
+
+# Copy and build the Java application
+COPY pom.xml .
+COPY src ./src
+RUN mvn package
+
+# Run the Java application
+CMD ["java", "-jar", "target/myapp.jar"]
+```
+## Ruby with Labels
+```Dockerfile
+# Use a Ruby base image
+FROM ruby:2.7
+
+# Set labels for the image
+LABEL maintainer="yourname@example.com"
+LABEL version="1.0"
+LABEL description="Ruby application with labels"
+
+# Set the working directory
+WORKDIR /app
+
+# Copy and install Ruby gems
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+# Run a Ruby application
+COPY app.rb .
+CMD ["ruby", "app.rb"]
+```
+## Golang with Labels
+```Dockerfile
+# Use a Golang base image
+FROM golang:1.16
+
+# Set labels for the image
+LABEL maintainer="yourname@example.com"
+LABEL version="1.0"
+LABEL description="Go application with labels"
+
+# Set the working directory
+WORKDIR /app
+
+# Copy and build the Go application
+COPY . .
+RUN go build -o myapp
+
+# Run the Go application
+CMD ["./myapp"]
 ```
