@@ -1,5 +1,3 @@
-Here is a summary of the Docker commands mentioned in the article you shared:
-
 **Container Commands**
 - `docker create [IMAGE]`: Create a container.
 - `docker run [IMAGE] [COMMAND]`: Run a command in a new container.
