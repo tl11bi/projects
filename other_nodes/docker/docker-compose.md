@@ -16,6 +16,7 @@ pip install -U docker-compose
 ```shell
 docker-compose up
 ```
+or ```docker-compose -f your-custom-compose-file.yml up``` for spesific names
 
 ### Stop all services
 ```shell
