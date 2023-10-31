@@ -23,37 +23,33 @@ Example usage of some Dockerfile instructions:
 # Use a base image
 FROM ubuntu:20.04
 
+# Set labels for the image
+LABEL maintainer="connorli0@outlook.com"
+LABEL version="1.0"
+LABEL description="connor_test"
 # Set environment variables
 ENV APP_VERSION 1.0
 ENV PORT 8080
-
 # Copy files to the container
-ADD app.tar.gz /app/
-
+# ADD app.tar.gz /app/
 # Expose a port
 EXPOSE 80
-
 # Specify the default command
 CMD ["app", "--port", "80"]
-
 # Run a command during build
-RUN apt-get update && apt-get install -y package
-
+RUN apt-get update && apt-get install -y python3.8
 # Set the working directory
 WORKDIR /app
-
 # Define the entrypoint
 ENTRYPOINT ["app"]
-
 # Set the user to run the container
 USER myuser
-
 # Create a volume for data persistence
 VOLUME /data
-
 # Add metadata to the image
 LABEL maintainer="yourname@example.com" version="1.0"
 ```
+
 
 # Dockerfile Examples with Labels
 
@@ -84,11 +80,6 @@ CMD ["python", "app.py"]
 # Use a Node.js base image
 FROM node:14
 
-# Set labels for the image
-LABEL maintainer="yourname@example.com"
-LABEL version="1.0"
-LABEL description="Node.js application with labels"
-
 # Set the working directory
 WORKDIR /app
 
@@ -106,11 +97,6 @@ CMD ["node", "app.js"]
 # Use an OpenJDK base image
 FROM openjdk:11-jre-slim
 
-# Set labels for the image
-LABEL maintainer="yourname@example.com"
-LABEL version="1.0"
-LABEL description="Java application with labels"
-
 # Set the working directory
 WORKDIR /app
 
@@ -126,11 +112,6 @@ CMD ["java", "-jar", "target/myapp.jar"]
 ```Dockerfile
 # Use a Ruby base image
 FROM ruby:2.7
-
-# Set labels for the image
-LABEL maintainer="yourname@example.com"
-LABEL version="1.0"
-LABEL description="Ruby application with labels"
 
 # Set the working directory
 WORKDIR /app
