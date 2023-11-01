@@ -1,3 +1,11 @@
+# Docker Networking
+- `docker network ls`: List the networks
+- `docker network create -d bridge forhahas-bridge` : Create a network named forhahas-bridge with bridge driver
+- `docker network inspect network forhahas-bridge` : Inspect the network forhahas-bridge
+- `docker network connect forhahas-bridge forhahas` : Connect the container forhahas to the network forhahas-bridge
+- `docker run`
+  - `docker run -itd --rm -p 80:80 --name stormbreaker nginx:latest` : Run a container, expose port 80 to the host
+  - `docker run -itd --rm --network host --name stormbreaker nginx:latest` : Run a container, expose all ports to the host
 # Advantages of Docker Networking
 
 Some of the major benefits of using Docker Networking are:
@@ -64,11 +72,16 @@ In this article, we will be discussing how to connect your containers with suita
 
 Let’s discuss some of the important networking commands that are widely used by developer teams.
 
-- **List down the Networks associated with Docker**
-  ```
-  docker network ls
-  ```
-  The above command displays all the networks available on the Docker ecosystem.
+- `docker network ls`: List the networks
+```
+NETWORK ID     NAME                           DRIVER    SCOPE
+6795eb03bcb4   bridge                         bridge    local
+e0e8cb7cee07   host                           host      local
+92093a0f5ca0   minikube                       bridge    local
+c1ef45ebb4f3   none                           null      local
+eff1a6d628f8   python-flask-example_default   bridge    local
+```
+
 
 - **Connect a Running Container to a Network**
   ```bash
