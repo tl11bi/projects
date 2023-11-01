@@ -71,9 +71,35 @@ VOLUME /data
 ```
 ![Alt text](image.png)
 </details>
+```
+
+<details>
+  <summary>Example Runs and Results</summary>
+  
+  ### Run Results
+  run with ```docker build -t docker-i .```
+```
+[+] Building 0.0s (7/7) FINISHED                                                                                                                     docker:default
+ => [internal] load build definition from dockerfile                                                                                                           0.0s
+ => => transferring dockerfile: 713B                                                                                                                           0.0s 
+ => [internal] load .dockerignore                                                                                                                              0.0s 
+ => => transferring context: 2B                                                                                                                                0.0s 
+ => [internal] load metadata for docker.io/library/ubuntu:20.04                                                                                                0.0s 
+ => [1/3] FROM docker.io/library/ubuntu:20.04                                                                                                                  0.0s 
+ => CACHED [2/3] RUN apt-get update && apt-get install -y python3.8                                                                                            0.0s 
+ => CACHED [3/3] WORKDIR /app                                                                                                                                  0.0s 
+ => exporting to image                                                                                                                                         0.0s 
+ => => exporting layers                                                                                                                                        0.0s 
+ => => writing image sha256:a7825a3370a67f08609060a0f5ccbb5dc79449494b73b2ce7b66777992913e79                                                                   0.0s 
+ => => naming to docker.io/library/docker-i   
+```
+![Alt text](image.png)
+</details>
 
 # Dockerfile Examples
+# Dockerfile Examples
 
+## Python
 ## Python
 
 ```Dockerfile
@@ -93,6 +119,8 @@ CMD ["python", "app.py"]
 ```
 
 ## Node.js
+
+## Node.js
 ```Dockerfile
 # Use a Node.js base image
 FROM node:14
@@ -110,6 +138,7 @@ COPY app.js .
 CMD ["node", "app.js"]
 ```
 ## Java
+## Java
 ```Dockerfile
 # Use an OpenJDK base image
 FROM openjdk:11-jre-slim
@@ -125,6 +154,7 @@ RUN mvn package
 # Run the Java application
 CMD ["java", "-jar", "target/myapp.jar"]
 ```
+## Ruby
 ## Ruby
 ```Dockerfile
 # Use a Ruby base image
@@ -142,6 +172,7 @@ COPY app.rb .
 CMD ["ruby", "app.rb"]
 ```
 ## Golang
+## Golang
 ```Dockerfile
 # Use a Golang base image
 FROM golang:1.16
@@ -149,6 +180,7 @@ FROM golang:1.16
 # Set labels for the image
 LABEL maintainer="yourname@example.com"
 LABEL version="1.0"
+LABEL description="Go application"
 LABEL description="Go application"
 
 # Set the working directory
