@@ -1,0 +1,92 @@
+[
+  {
+    "_id": 1,
+    "make": "Toyota",
+    "module": "Corolla",
+    "year": 2015
+  },
+  {
+    "_id": 2,
+    "make": "Toyota",
+    "module": "Camry",
+    "year": 2016
+  },
+  {
+    "_id": 3,
+    "make": "Toyota",
+    "module": "Prius",
+    "year": 2017
+  },
+  {
+    "_id": 4,
+    "make": "Toyota",
+    "module": "Yaris",
+    "year": 2018
+  },
+  {
+    "_id": 5,
+    "make": "Toyota",
+    "module": "Avalon",
+    "year": 2019
+  },
+  {
+    "_id": 6,
+    "make": "Toyota",
+    "module": "Corolla",
+    "year": 2020
+  },
+  {
+    "_id": 7,
+    "make": "Toyota",
+    "module": "Camry",
+    "year": 2021
+  },
+  {
+    "_id": 8,
+    "make": "Toyota",
+    "module": "Prius",
+    "year": 2022
+  },
+  {
+    "_id": 9,
+    "make": "Toyota",
+    "module": "Yaris",
+    "year": 2023
+  },
+  {
+    "_id": 10,
+    "make": "Toyota",
+    "module": "Avalon",
+    "year": 2024
+  },
+  {
+    "_id": 11,
+    "make": "Honda",
+    "module": "Civic",
+    "year": 2015
+  },
+  {
+    "_id": 12,
+    "make": "Mazda",
+    "module": "CX-5",
+    "year": 2015
+  },
+  {
+    "_id": 13,
+    "make": "Ford",
+    "module": "Fusion",
+    "year": 2015
+  },
+  {
+    "_id": 14,
+    "make": "Nissan",
+    "module": "Altima",
+    "year": 2015
+  },
+  {
+    "_id": 15,
+    "make": "Chevrolet",
+    "module": "Malibu",
+    "year": 2015
+  }
+]
