@@ -2,6 +2,11 @@ Certainly, I've added the provided commands and additional explanations to the K
 
 # Kubernetes Command Cheat Sheet
 
+## before start, on your local machine
+```bash
+minikube start
+minikube status
+```
 ## Cluster Information
 - `kubectl version`: Display client and server Kubernetes versions.
 - `kubectl cluster-info`: Show cluster information.
@@ -117,9 +122,24 @@ webapp-deployment-f8d7df85d-6rzcb   1/1     Running   0          42h    10.244.0
 
 ### Start Kubectl Dashboard
 
+- https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 ```bash
-minikube apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 kubectl proxy
+
+kubectl apply -f k8s-dashboard.yaml
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+
+
+```
+go to http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+if it still doesn't work, try this:
+
+```bash
+kubectl get namespace "kubernetes-dashboard" -o json \
+  | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
+  | kubectl replace --raw /api/v1/namespaces/kubernetes-dashboard/finalize -f -
+
 ```
 
 ### Kubectl Change Replica Set
