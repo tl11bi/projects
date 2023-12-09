@@ -1,62 +1,68 @@
-### Container Commands
-### Container Commands
-- `docker create [IMAGE]`: Create a container.
-  - create a container from an image named docker-i `docker create docker-i`
-  - create a container from an image named docker-i and name it as mycontainer `docker create --name mycontainer docker-i`
-  - create a container from an image and run it interactively `docker create -it docker-i`
-  - create a container from an image named docker-i `docker create docker-i`
-  - create a container from an image named docker-i and name it as mycontainer `docker create --name mycontainer docker-i`
-  - create a container from an image and run it interactively `docker create -it docker-i`
-- `docker container prune [OPTIONS]`: Removes all the stopped containers.
-- `docker container commit [OPTIONS] CONTAINER [REPOSITORY [:TAG]]`: Create a new image from a container’s file changes.
-- `docker rm [CONTAINER]`: Remove an existing container.
-- `docker container ls`: List the running containers.
-- `docker stop [CONTAINER_NAME]`: Stop a running container.
-- `docker restart [CONTAINER]`: Restart a running container.
-- `docker Kill [CONTAINER]`: Kill the running containers.
-- `docker ps`: List the running containers.
-  - `docker ps -a --filter name=forhahas` : List all containers with name forhahas
-- `docker ps`: List the running containers.
-  - `docker ps -a --filter name=forhahas` : List all containers with name forhahas
-- `docker wait [CONTAINER]`: Block a container.
+# docker, docker-compose commands
+## Basic docker commands
+- 'docker build -t registry.example.com/workspace/myimage:1.0 .': Build an image from the Dockerfile in the current directory and tag the image.
+- 'docker push registry.example.com/workspace/myimage:1.0': Push an image tagged 1.0 to the registry.
+- 'docker pull registry.example.com/workspace/myimage:1.0': Pull an image tagged 1.0 from the registry.
+- 'docker create --name mycontainer registry.example.com/workspace/myimage:1.0': Create a container named mycontainer from the image tagged 1.0.
+  - 'docker create -it --name mycontainer registry.example.com/workspace/myimage:1.0': Create a container named mycontainer from the image tagged 1.0 and run it interactively.
+- 'docker run --name mycontainer registry.example.com/workspace/myimage:1.0 python3 /app/main.py': create a container named mycontainer from the image tagged 1.0 and run the command python3 /app/main.py.
+  - 'docker run -it --name mycontainer registry.example.com/workspace/myimage:1.0 /bin/bash': create a container named mycontainer from the image tagged 1.0 and run the command /bin/bash interactively.
+- 'docker start mycontainer': Start the container named mycontainer.
+  - 'docker exec -it mycontainer /bin/bash': Run the command /bin/bash in the container mycontainer interactively.
 
+## docker commands that do inventory
+- 'docker ps': List the running containers.
+  - 'docker ps -a': List all containers.
+- 'docker container ls': List the running containers.
+  - 'docker container ls -a': List all containers.
+- 'docker container prune': Removes all the stopped containers.
+- 'docker kill mycontainer': Kill the running container named mycontainer.
+- 'docker rm mycontainer': Remove the container named mycontainer.
+- 'docker images': List the images.'
+- 'docker wait mycontainer': Block the container named mycontainer.
+- 'docker rename mycontainer mynewcontainer': Rename the container named mycontainer to mynewcontainer.
+- 'docker run -itd --rm -p 80:80 --name stormbreaker nginx:latest': Run a container, expose port 80 to the host.
+- 'docker attach mycontainer': Attach local standard input, output, and error streams to a running container.
+- 'docker history registry.example.com/workspace/myimage:1.0': Display the history of an image with the image name mentioned in the command.
+- 'docker volume create': Create a volume for containers.
+- 'docker login': Login into docker hub.
 
-### Other Commands
-- `docker rename [CONTAINER_NAME] [NEW_CONTAINER_NAME]`: Rename an existing container.
-- `docker run [IMAGE] [COMMAND]`: Run a command in a new container.
-  - `docker run -d --name forhahas connorli0/connor-test /user/bin/top -b` : Run a container in the background with name forhahas and run the command /user/bin/top -b
-  - `docker run -itd --rm -p 80:80 --name stormbreaker nginx:latest` : Run a container, expose port 80 to the host
-- `docker attach [CONTAINER]`: Attach local standard input, output, and error streams to a running container.
+## docker compose commands
+- 'docker-compose up': Start the containers.
+  - 'docker-compose -f docker-compose.yml up': Start the containers.
+  - 'docker-compose up -d': Start the containers in detached mode.
+  - 'docker-compose up -d --scale service_name=desired_count': Scale a service.
+- 'docker-compose down': Stop the containers.
+  - 'docker-compose -f docker-compose.yml down': Stop the containers.
 
-### General Commands
+## Configuration
 
-### Other Commands
-- `docker rename [CONTAINER_NAME] [NEW_CONTAINER_NAME]`: Rename an existing container.
-- `docker run [IMAGE] [COMMAND]`: Run a command in a new container.
-  - `docker run -d --name forhahas connorli0/connor-test /user/bin/top -b` : Run a container in the background with name forhahas and run the command /user/bin/top -b
-  - `docker run -itd --rm -p 80:80 --name stormbreaker nginx:latest` : Run a container, expose port 80 to the host
-- `docker attach [CONTAINER]`: Attach local standard input, output, and error streams to a running container.
+### Use YAML files to configure services
 
-### General Commands
-- `docker login`: Login into docker hub.
-- `docker info`: Get information on the Docker tool.
-- `docker history httpd`: Display the history of an image with the image name mentioned in the command.
-- `docker volume create`: Create a volume for containers.
-
-### Docker Share Command
-### Docker Share Command
-- `docker pull [OPTIONS] NAME [:TAG]`: Pull an image from a registry.
-- `docker push [OPTIONS] NAME [:TAG]`: Push an image to a registry.
-- `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`: Run a command in a running container.
-  - `docker exec forhahas ls -lash` : Run the command ls -lash in the container forhahas
-  - `docker exec -it forhahas2 /bin/sh`: Run the command /bin/sh in the container forhahas2 interactively
-### List of Docker Commands
-- `docker build -t myimage:1.0 .`: Build an image from the Dockerfile in the current directory and tag the image.
-  - `docker exec forhahas ls -lash` : Run the command ls -lash in the container forhahas
-  - `docker exec -it forhahas2 /bin/sh`: Run the command /bin/sh in the container forhahas2 interactively
-### List of Docker Commands
-- `docker build -t myimage:1.0 .`: Build an image from the Dockerfile in the current directory and tag the image.
-- `docker images`: List all Docker images.
-- `docker image rm alpine:3.4`: Delete an image from the docker image.
-
-
+Create a `docker-compose.yml` file with service definitions. Here's a sample `docker-compose.yml` for a web application:
+- [docker-compose.yaml example link](https://github.com/tl11bi/k8s-example/blob/master/docker-container-examples/python-flask-docker-i/k8s-connor-app.yaml)
+- [dockerfile example](https://github.com/tl11bi/k8s-example/blob/master/docker-container-examples/python-flask-docker-i/Dockerfile)
+- [docker build bash commands example](https://github.com/tl11bi/k8s-example/blob/master/docker-container-examples/python-flask-docker-i/docker-build.sh)
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container
+        image: connorli0/connor-test:1.5
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
+```
