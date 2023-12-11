@@ -1,38 +1,51 @@
-### Main Commands:
+## main commands
+- 'terraform init': initialize a workspace
+- 'terraform plan': show changes required by the current configuration
+- 'terraform apply': create or update infrastructure
+- 'terraform destroy': destroy previously-created infrastructure
+- 'terraform validate': check whether the configuration is valid
 
-- `init`: Prepare your working directory for other commands.
-  - Explanation: Initializes a new or existing Terraform configuration, including downloading provider plugins.
+## other commands
+- 'terraform console': try Terraform expressions at an interactive command prompt
+- 'terraform fmt': reformat your configuration in the standard style
+- 'terraform force-unlock': release a stuck lock on the current workspace
+- 'terraform get': install or upgrade remote Terraform modules
+- 'terraform graph': generate a Graphviz graph of the steps in an operation
+- 'terraform import': associate existing infrastructure with a Terraform resource
+- 'terraform login': obtain and save credentials for a remote host
+- 'terraform logout': remove locally-stored credentials for a remote host
+- 'terraform providers': show the providers required for this configuration
+- 'terraform refresh': update the state to match remote systems
+- 'terraform show': show the current state or a saved plan
+- 'terraform state': advanced state management
+- 'terraform taint': mark a resource instance as not fully functional
+- 'terraform test': execute integration tests for Terraform modules
+- 'terraform untaint': remove the 'tainted' state from a resource instance
+- 'terraform version': show the current Terraform version
+- 'terraform workspace': workspace management
 
-- `validate`: Check whether the configuration is valid.
-  - Explanation: Validates the syntax and configuration of your Terraform files.
-
-- `plan`: Show changes required by the current configuration.
-  - Explanation: Generates an execution plan describing the changes Terraform will make to achieve the desired state.
-
-- `apply`: Create or update infrastructure.
-  - Explanation: Applies the changes described in the execution plan to create or modify infrastructure.
-
-- `destroy`: Destroy previously-created infrastructure.
-  - Explanation: Destroys the Terraform-managed infrastructure.
-
-### All Other Commands:
-
-- `console`: Try Terraform expressions at an interactive command prompt.
-- `fmt`: Reformat your configuration in the standard style.
-- `force-unlock`: Release a stuck lock on the current workspace.
-- `get`: Install or upgrade remote Terraform modules.
-- `graph`: Generate a Graphviz graph of the steps in an operation.
-- `import`: Associate existing infrastructure with a Terraform resource.
-- `login`: Obtain and save credentials for a remote host.
-- `logout`: Remove locally-stored credentials for a remote host.
-- `metadata`: Metadata related commands.
-- `output`: Show output values from your root module.
-- `providers`: Show the providers required for this configuration.
-- `refresh`: Update the state to match remote systems.
-- `show`: Show the current state or a saved plan.
-- `state`: Advanced state management.
-- `taint`: Mark a resource instance as not fully functional.
-- `test`: Execute integration tests for Terraform modules.
-- `untaint`: Remove the 'tainted' state from a resource instance.
-- `version`: Show the current Terraform version.
-- `workspace`: Workspace management.
+## terraform folder structure
+```text
+|_ main.tf
+|_ variables.tf
+|_ outputs.tf
+|_ terraform.tfvars
+|_ provider.tf
+|_ terraform.tfstate
+|_ terraform.tfstate.backup
+|_ .terraform
+    |_ plugins
+        |_ linux_amd64
+            |_ lock.json
+            |_ terraform-provider-aws_v2.70.0_x4
+            |_ terraform-provider-null_v2.1.2_x4
+            |_ terraform-provider-random_v3.1.0_x4
+            |_ terraform-provider-template_v2.2.0_x4
+|_ modules
+    |_ moduleA
+        |_ main.tf
+        |_ variables.tf
+        |_ outputs.tf
+        |_ provider.tf
+...
+```
