@@ -1,0 +1,26 @@
+- a little bit of my self
+  - I have been in Canada little over 11 years, did my both undergrad and master CS degree in Canada
+  - My name is Connor, and I got my name from The Terminator movie! (then you know how much I love technology, or sci-fi movies)
+  - I did my first internship at TD back in 2015 in London, ON, but my main team is at Scarbrough. and I really love working for TD
+- my ambition: make others' life easier and more productive through my work
+  - This is why I chooses CS: was driven by the desire to see my work benefiting a broad user base
+  - also was because I was addicted to the feeling of solving problems, stuking in a problem and finally solve it
+  - Why makes me so excited about DevOps, automation, and standardization of any process
+    - examples like, diamond reconsolidation, KPI Dashboard, or EDP pipeline
+    - TD Bank: Cloud innovation through automation Award in 2022
+- Innovative Person, proposed a diverse range of topics in Q3 design sessions
+  - Kafka, mainframe, python multi-version support, sonarqube exclusion, .gitignore templates, template repo creations
+- Continuous learning, I am a quick learner
+  - gained 3 Azure Certification, DevOps Institute: DevOps Foundation
+  - Aims to get certification in GCP, AkS, and Terraform
+  - Knowledgeable in both EDP GT XL pipeline
+- My goal is to become an architect, or a lead DevOps like Eric, or Dom!
+- What I can bring to the container team
+  - My knowledge in EDP pipeline, terraform module and provider creation and deployment, Azure, and reporting (data analytics and visualization)
+  - knowing the EDP pipeline, I can help maintain pipeline for the container team
+  - familiar with redhat (linux) admin, network, firewall rules, Pallarato, upgraded github IaaS and setting up KPI servers for the team
+  - also I did change orders, incidents in the past, nothing that I can't handle
+- What I am looking for
+  - Dreaming to become an architect, or a lead DevOps like Eric, or Dom, or Steve! coordinate with other teams, and help them to achieve their goals
+  - looking for more infrastructure experience, and I will be like sponge bob! absorb everything I can
+  - My Love lays in the beauty of stability, auto-scaling, and auto-healing
