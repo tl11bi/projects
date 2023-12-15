@@ -1,2 +1,0 @@
-- https://www.lintcode.com/
-- https://www.jiuzhang.com/
